@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tytuł strony</title>
+    </head>
+    <body>
+        <script>
+            for(var i = 0; i <= 10; i++)
+                document.write(i + "<br/>");
+
+            for(var mnozna = 1; mnozna<= 10; mnozna++)
+                for (var mnoznik = 1; mnoznik <= 10; mnoznik++)
+                    document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+            
+            mnoznik = 0;
+            mnozna = 0;
+            while (mnozna <=10)
+            {
+                document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+                mnoznik++;
+                if (mnoznik > 10)
+                {
+                    mnoznik = 0;
+                    mnozna++;
+                }
+            }
+        </script>
+    </body>
+</html>
