@@ -18,13 +18,60 @@
                 * informację czy wartości są identyczne czy nie
                  
                 Zadanie 3
-                Napisz funkcję, która przymie liczbę 
+                Napisz funkcję, która przyjmie liczbę 
                 i wyswietli nazwę dnia tygodnia.
 
                 Zadanie 4*
                 Napisz funkcję, która pobierze liczbę
                 i wyświetli ją w systemie binarnym.
             */
+
+            //zadanie3
+            function WyswietlDzienTygodnia(numerDnia)
+            {
+                switch(numerDnia)
+                {
+                    case 0:
+                    case 7:
+                        document.write("Niedziela<br/>");
+                        break;
+                    case 1:
+                        document.write("Poniedziałek<br/>");
+                        break;
+                    case 2:
+                        document.write("Wrotek<br/>");
+                        break;
+                }
+            }
+            WyswietlDzienTygodnia(1)
+
+            function DecToBin(decNumber)
+            {
+                var strBin = "";
+                while (decNumber > 0)
+                {
+                    var rest = decNumber % 2;
+                    decNumber = parseInt(decNumber / 2); 
+                    strBin = rest + strBin;
+                }
+                document.write(strBin);
+                document.write("<br/>");
+            }
+            function DecToBin2(decNumber)
+            {
+                var strBin = "";
+                while (decNumber > 0)
+                {
+                    var rest = decNumber & 1;
+                    decNumber = decNumber >> 1; 
+                    strBin = rest + strBin;
+                }
+                document.write(strBin);
+                document.write("<br/>");
+            }
+            DecToBin(86)
+            DecToBin2(86)
+            
 
             function CheckIfPrimeNumber(numberToCheck)
             {
