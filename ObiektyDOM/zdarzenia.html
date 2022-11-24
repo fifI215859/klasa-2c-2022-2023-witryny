@@ -13,10 +13,14 @@
             onmouseleave="alert('Witaj na stronie. Zdarzenie najechania myszką');"/>
         <br/>
         <p>Nowy tekst:</p>
-        <input type="text" id="newText" value="Przykładowy tekst"/><br/>
+        <input type="text" id="newText" value="Przykładowy tekst" /><br/>
         <input type="button" value="Podmień tekst" onclick="changeText()"/><br/>
        
         <div id="divToChange"><p>adfgdtreyjtytsfg</p></div>
+
+        <img src="zd1.jpg" width="80" height="80" id="imgID"
+        onmouseenter="changeImg('zd2.jpg')"
+        onmouseleave="changeImg('zd1.jpg')"/>
 
         <script>
             //alert("Witaj na stronie");
@@ -27,9 +31,13 @@
 
                 let objectToChange = document.getElementById("divToChange");
                 //objectToChange.innerHTML="Ola ma szopa";
-                objectToChange.innerHTML = objectWithNewText.value;
+                objectToChange.innerText = objectWithNewText.value;
             }
 
+            function changeImg(name)
+            {
+                document.getElementById("imgID").src = name;
+            }
             
         </script>     
     </body>
