@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 
-<html>
+<html onmousemove="document.getElementById('counterId').innerHTML = counter++">
     <head>
         <title>Zdarzenia</title>
     </head>
     <body>
+        <div id="counterId"></div>
+        <script>
+            let counter = 0;
+        </script>
+
         <input type="button" 
             value="Kliknij mnie" 
             onclick="alert('Witaj na stronie');"/><br/>
