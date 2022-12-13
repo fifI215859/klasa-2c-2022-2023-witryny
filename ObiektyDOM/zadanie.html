@@ -7,7 +7,7 @@
         <p>Podaj imię:</p>
         <input type="text" id="nameId"/>
         <p>Podaj wiek</p>
-        <input type="text" id="ageId"/>
+        <input type="text" id="ageId" />
         <br/>
         <input type="button" value="Wyświetl informację" onclick="getInfo()"/>
         <br/>
@@ -37,9 +37,45 @@
 
         <script>
 
+            function ValidateInfo(message, pass)
+            {
+                this.message = message;
+                this.pass = pass;
+            }
+
+            function Validate(age)
+            {
+                let validateInfo = validateInfo("", true);
+                if (age < 0)
+                {
+                    validateInfo.message = "Liczba ujemna";
+                    validateInfo.pass = false;
+                    return validateInfo;
+                }
+
+                return validateInfo;
+            }
+
             function getInfo()
             {
-                
+                let age = document.getElementById("ageId").value;
+                //parseInt(age) => konkretna liczba albo wartość NaN
+                if (isNaN(parseInt(age)))
+                {
+                    
+                }
+
+                let validateInfo = Validate(15);
+                if (validateInfo.pass)
+                {
+                    //ok
+
+                }
+                else
+                {
+                    //błąd
+                    //validateInfo.message
+                }
             }
             
         </script>
