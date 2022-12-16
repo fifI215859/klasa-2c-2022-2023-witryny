@@ -37,45 +37,43 @@
 
         <script>
 
-            function ValidateInfo(message, pass)
-            {
-                this.message = message;
-                this.pass = pass;
-            }
-
-            function Validate(age)
-            {
-                let validateInfo = validateInfo("", true);
-                if (age < 0)
-                {
-                    validateInfo.message = "Liczba ujemna";
-                    validateInfo.pass = false;
-                    return validateInfo;
-                }
-
-                return validateInfo;
-            }
-
+           
             function getInfo()
             {
+                let name = document.getElementById("nameId").value;
                 let age = document.getElementById("ageId").value;
-                //parseInt(age) => konkretna liczba albo wartość NaN
+                let helloTag = document.getElementById("helloId");
+                let legalAgeTag = document.getElementById("legalAgeId");
+
+                helloTag.innerText = "";
+                legalAgeTag.innerText = "";
+
+                if (name == "")
+                {
+                    helloTag.innerText = "Nie podano imienia";
+                    return;
+                }
+
+                if (age == "")
+                {
+                    helloTag.innerText = "Nie podano wieku";
+                    return;
+                }
+
                 if (isNaN(parseInt(age)))
                 {
-                    
+                    helloTag.innerText = "Wiek nie jest liczbą";
+                    return;
                 }
 
-                let validateInfo = Validate(15);
-                if (validateInfo.pass)
+                if (age < 0 || age > 130)
                 {
-                    //ok
+                    helloTag.innerText = "Wiek jest spoza zakresu <0;130>";
+                    return;
+                }
 
-                }
-                else
-                {
-                    //błąd
-                    //validateInfo.message
-                }
+                helloTag.innerText = "Witaj " + name + " na stronie";
+                legalAgeTag.innerText = "Jesteś " + ((age >= 18) ? "pełnoletni" : "niepełnoletni");
             }
             
         </script>
