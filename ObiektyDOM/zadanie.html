@@ -36,9 +36,7 @@
         </div>
 
         <script>
-
-           
-            function getInfo()
+            function getInfoTMP()
             {
                 let name = document.getElementById("nameId").value;
                 let age = document.getElementById("ageId").value;
@@ -47,7 +45,7 @@
 
                 helloTag.innerText = "";
                 legalAgeTag.innerText = "";
-
+                
                 if (name == "")
                 {
                     helloTag.innerText = "Nie podano imienia";
@@ -75,7 +73,128 @@
                 helloTag.innerText = "Witaj " + name + " na stronie";
                 legalAgeTag.innerText = "Jesteś " + ((age >= 18) ? "pełnoletni" : "niepełnoletni");
             }
+
+            function getInfo()
+            {
+                let name = document.getElementById("nameId").value;
+                let age = document.getElementById("ageId").value;
+                let helloTag = document.getElementById("helloId");
+                let legalAgeTag = document.getElementById("legalAgeId");
+
+                ClearTags(helloTag, legalAgeTag);
+                
+                validateInfo = ValidateForm(name, age);
+                if (validateInfo.Pass)
+                {
+                    WhenCorrectForm(name, age, helloTag, legalAgeTag)
+                }
+                else
+                {
+                    ShowError(validateInfo.Message  , helloTag);
+                }
+            }
+
+            function ShowError(message, helloTag)
+            {
+                helloTag.innerText = message;
+                //alert(message);
+            }
+
+            function ClearTags(helloTag, legalAgeTag)
+            {
+                helloTag.innerText = "";
+                legalAgeTag.innerText = "";
+            }
+
+            function ValidateForm(name, age)
+            {
+                validateInfo = ValidateName(name);
+                if (!validateInfo.Pass)
+                    return validateInfo;
+
+                validateInfo = ValidateAge(age);
+                return validateInfo;
+            }
+
+            function ValidateName(name)
+            {
+                validateInfo = ValidateNameIsEmpty(name);
+                return validateInfo;
+            }
+
+            function ValidateNameIsEmpty(name)
+            {
+                validateInfo = new ValidateInfo(true,"");
+                if (name == "")
+                {
+                    validateInfo.Pass = false;
+                    validateInfo.Message = "Nie podano imienia";
+                }
+                return validateInfo;
+            }
+
+            function ValidateAge(age)
+            {
+                validateInfo = ValidateAgeIsEmpty(age);
+                if (!validateInfo.Pass)
+                    return validateInfo;
+
+                validateInfo = ValidateAgeIsNumber(age);
+                if (!validateInfo.Pass)
+                    return validateInfo;
+
+                validateInfo = ValidateAgeIsInRange(age);
+                return validateInfo;
+            }
+
+            function ValidateAgeIsEmpty(age)
+            {
+                validateInfo = new ValidateInfo(true,"");
+                if (age == "")
+                {
+                    validateInfo.Pass = false;
+                    validateInfo.Message = "Nie podano wieku";
+                }
+                return validateInfo;
+            }
+
+            function ValidateAgeIsNumber(age)
+            {
+                validateInfo = new ValidateInfo(true,"");
+
+                if (isNaN(parseInt(age)))
+                {
+                    validateInfo.Pass = false;
+                    validateInfo.Message = "Wiek nie jest liczbą";
+                }
+                return validateInfo;
+            }
+
+            function ValidateAgeIsInRange(age)
+            {
+                validateInfo = new ValidateInfo(true,"");
+
+                if (age < 0 || age > 130)
+                {
+                    validateInfo.Pass = false;
+                    validateInfo.Message = "Wiek jest spoza zakresu <0;130>";
+                }
+                return validateInfo;
+            }
+
+            function WhenCorrectForm(name, age, helloTag, legalAgeTag)
+            {
+                helloTag.innerText = "Witaj " + name + " na stronie";
+                legalAgeTag.innerText = "Jesteś " + ((age >= 18) ? "pełnoletni" : "niepełnoletni");
+            }
+
+            function ValidateInfo(pass, message)
+            {
+                this.Pass = pass;
+                this.Message = message;
+            }
             
         </script>
     </body>
 </html>
+
