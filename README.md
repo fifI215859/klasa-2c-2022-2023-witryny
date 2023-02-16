@@ -14,5 +14,5 @@ Klasa Imię Nazwisko nazwa_zadania
 
 lukasz.felisek@ezse.pl
 
-
+Zakrzywiony napis:
 https://www.youtube.com/watch?v=aKjJXSblmOQ
