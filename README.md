@@ -11,3 +11,5 @@ Temat wiadomości e-mail:
 Klasa Imię Nazwisko nazwa_zadania
 
 2C Jan Kowalski 2022-06-Inf03 02 JS
+
+lukasz.felisek@ezse.pl
