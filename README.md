@@ -1,20 +1,25 @@
 # klasa-2c-2022-2023-witryny
+# 
+# 
+# 
 
 
-Test:
 
-Stanowisko 1, 4, 7, 10, 13, 16
-https://forms.office.com/e/w85MhqqRNF
+# Stanowisko 1, 4, 7, 10, 13, 16:
+Sprawdzian 2020-06-E14 01 JS
 
-Stanowisko 2, 5, 8, 11, 14, 17
-https://forms.office.com/e/6KSnhT0j5P
+# Stanowisko 2, 5, 8, 11, 14, 17:
+Sprawdzian 2020-06-EE09 04 JS
 
-Stanowisko 3, 6, 9, 12, 15
-https://forms.office.com/e/PcRXfeGgUN
+# Stanowisko 3, 6, 9, 12, 15:
+Sprawdzian 2020-06-EE09 05 JS
 
 #
 #
 #
+
+https://forms.office.com/e/zbPMubTVvW
+RSPO szkoły: 8094
 
 Temat wiadomości e-mail:
 
