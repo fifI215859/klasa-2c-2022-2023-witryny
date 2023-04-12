@@ -31,3 +31,5 @@ lukasz.felisek@ezse.pl
 
 Zakrzywiony napis:
 https://www.youtube.com/watch?v=aKjJXSblmOQ
+
+https://typeofweb.com/this-js-kontekst-wywolania-funkcji
